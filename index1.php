@@ -1,4 +1,13 @@
 <!DOCTYPE html>
+
+<?php
+	//testa a session
+	session_start();
+	if(empty($_SESSION["proNome"]))
+		echo '<meta http-equiv="refresh" content=0;url="login.php">';
+	//fim testa a session
+?>
+
 <html>
 <head>
   <meta charset="utf-8">

@@ -1,14 +1,14 @@
 <?php
-	include "/../pattern/database.php";
-		
-	//pode executar inserções, ou atualizações na tabela.
+	include "../pattern/database.php";
+
+	//pode executar inserï¿½ï¿½es, ou atualizaï¿½ï¿½es na tabela.
 	function DBExecute($query){
 		$link =DBConnect();
 		$result = mysqli_query($link, $query)or die(mysqli_error($link));
 		DBClose($link);
 		return $result;
 	}
-	
+
 	//insere registro, recebe o nome da tabela e os dados em um array
 	function DBCreate($table,$data){
 		$data = DBEscape($data);
@@ -21,7 +21,7 @@
 	//Proteje contra sql injection
 	function DBEscape($dados){
 		$link = DBConnect();
-		
+
 		if 	(!is_array($dados)){
 			$dados = mysqli_real_escape_string($link,$dados);
 		} else{
@@ -32,9 +32,23 @@
 					$dados[$key] = $value;
 			}
 		}
-		
-		DBClose($link); 	
-		return $dados;		 
+
+		function DBRead($table, $params = null, $fields = "*") {
+    $query = "SELECT {$fields} FROM {$table} {$params};";
+    //echo $query;
+    $result = DBExecute($query);
+    if (!mysqli_num_rows($result))
+        return false;
+    else {
+        while ($res = mysqli_fetch_assoc($result)) {
+            $data[] = $res;
+        }
+        return $data;
+    }
+		}
+
+		DBClose($link);
+		return $dados;
 	}
-	
+
 	?>

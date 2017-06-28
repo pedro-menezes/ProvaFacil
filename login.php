@@ -1,3 +1,4 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
   <meta charset="utf-8">
@@ -16,12 +17,12 @@
         <button>criar conta</button>
         <p class="message">Já é cadastrado? <a href="#"> Entrar</a></p>
       </form>
-      <form class="login-form" name="cadPecas" method="post" action="../process/login.php">
+      <form class="login-form" name="cadPecas" method="post" action="process/login.php">
         <img class="logo" src="dist/img/logo.png"></img>
-        <input type="text" name="proNome" placeholder="usuario"/>
-        <input type="password" name=proSenha"" placeholder="senha"/>
+        <input type="text" name="proNome"/>
+        <input type="password" name="proSenha"/>
         <input type="hidden" name="loginx" value="1">
-        <button type="submit" formaction="index.html" value="Cadastrar">entrar</button>
+        <button type="submit" value="Cadastrar">entrar</button>
         <p class="message">Não é cadastrado?<a href="#"> Crie a sua conta aqui</a></p>
       </form>
     </div>
