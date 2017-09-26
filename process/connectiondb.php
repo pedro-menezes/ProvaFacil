@@ -33,7 +33,7 @@
 			}
 		}
 
-		function DBRead($table, $params = null, $fields = "*") {
+	function DBRead($table, $params = null, $fields = "*") {
     $query = "SELECT {$fields} FROM {$table} {$params};";
     //echo $query;
     $result = DBExecute($query);
