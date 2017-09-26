@@ -3,16 +3,16 @@
 <?php
 	//testa a session
 	session_start();
-	if(empty($_SESSION["proNome"]))
-		echo '<meta http-equiv="refresh" content=0;url="login.php">';
-	//fim testa a session
+		$email = $_SESSION["proEmail"];
+	if(empty($_SESSION["proEmail"])){
+		echo '<meta http-equiv="refresh" content=0;url="login.php">';}
 ?>
 
 <html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Dashboard</title>
+  <title>ProvaFácil</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
@@ -51,7 +51,7 @@
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="index1.php" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>P</b>F</span>
       <!-- logo for regular state and mobile devices -->
@@ -96,7 +96,7 @@
                   <a href="#" class="btn btn-default btn-flat">Perfil</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sair</a>
+                  <a href="login.php" class="btn btn-default btn-flat">Sair</a>
                 </div>
               </li>
             </ul>
@@ -137,8 +137,10 @@
       <ul class="sidebar-menu">
         <li class="header">MENU</li>
         <li>
-          <a href="pages/visualizarprovas.html">
-            <i class="fa fa-eye"></i> <span>Visualizar provas</span>
+		<?php
+			echo '<a href="pages/visualizarprovas.php?proEmail='.$email.'">'
+          ?>
+            <i class="fa fa-eye"></i> <span>Visualizar Questões</span>
             <span class="pull-right-container">
             </span>
           </a>
@@ -152,8 +154,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/gerenciar/cadastrarquestoes.html"><i class="fa fa-circle-o"></i> Cadastrar Questões</a></li>
-            <li><a href="pages/gerenciar/atualizarquestoes.html"><i class="fa fa-circle-o"></i> Atualizar Questões</a></li>
+            <li><?php echo '<a href="pages/gerenciar/cadastrarquestoes.php">'?><i class="fa fa-circle-o"></i> Cadastrar Questões</a></li>
+            <li><?php echo '<a href="pages/gerenciar/atualizarquestoes.php">'?><i class="fa fa-circle-o"></i> Atualizar Questões</a></li>
           </ul>
         </li>
         <li>

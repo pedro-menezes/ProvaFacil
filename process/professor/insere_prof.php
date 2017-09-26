@@ -1,6 +1,6 @@
 <?php
 	require "../../pattern/config.php";// carrega as constantes
-	require "../../process/connectiondb.php";
+	require "../../process/connection_operations.php";
 
 	$prof = array('proNome' => 0,'proSenha' => 0,'proEmail' => 0);
 
@@ -19,5 +19,5 @@
 		echo ":/";
 		echo"<script>alert('Falha');</script>;";
 	}
-	echo '<meta http-equiv="refresh" content=1;url="..\..\pages\cad_prof.html">';
+	echo '<meta http-equiv="refresh" content=1;url="..\..\login.php">';
 ?>

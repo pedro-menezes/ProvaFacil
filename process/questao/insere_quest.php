@@ -1,6 +1,7 @@
 <?php
 	require "../../pattern/config.php";// carrega as constantes
-	require "../../process/connectiondb.php";
+	require "../../process/connection_operations.php";
+	
 	$quest = array("queEnunciado"=> 0, "que_temCodigo" => 0);
 	$quest = array(
 		"queEnunciado" => $_POST['queEnunciado'],
@@ -15,5 +16,5 @@
 		echo ":/";
 		echo"<script>alert('Falha');</script>;";
 	}
-	echo '<meta http-equiv="refresh" content=1;url="..\..\pages\cad_quest.html">';
+	echo '<meta http-equiv="refresh" content=1;url="../../pages/gerenciar/cadastrarquestoes.php">';
 ?>

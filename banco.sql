@@ -146,3 +146,57 @@ ENGINE = InnoDB;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+INSERT INTO `provafacildb`.`professor` (`proNome`, `proEmail`, `proSenha`) VALUES ('Saulo Vinícius', 'saulovinicius987@gmail.com', 'password');
+INSERT INTO `provafacildb`.`professor` (`proNome`, `proEmail`, `proSenha`) VALUES ('Pedro Henrique', 'menezespedro10@hotmail.com', 'password');
+INSERT INTO `provafacildb`.`professor` (`proNome`, `proEmail`, `proSenha`) VALUES ('Fernando Paim', 'fernando.lima@ifmg.edu.br', 'password');
+
+INSERT INTO `provafacildb`.`curso` (`curNome`) VALUES ('Técnico Informática');
+INSERT INTO `provafacildb`.`curso` (`curNome`) VALUES ('Tecnico Administração');
+INSERT INTO `provafacildb`.`curso` (`curNome`) VALUES ('Ciência da Computação');
+INSERT INTO `provafacildb`.`curso` (`curNome`) VALUES ('Engenharia Elétrica');
+INSERT INTO `provafacildb`.`curso` (`curNome`) VALUES ('Marketing');
+
+INSERT INTO `provafacildb`.`professor_curso` (`prf_proCodigo`, `prf_curCodigo`) VALUES ('3', '1');
+INSERT INTO `provafacildb`.`professor_curso` (`prf_proCodigo`, `prf_curCodigo`) VALUES ('3', '3');
+INSERT INTO `provafacildb`.`professor_curso` (`prf_proCodigo`, `prf_curCodigo`) VALUES ('1', '1');
+INSERT INTO `provafacildb`.`professor_curso` (`prf_proCodigo`, `prf_curCodigo`) VALUES ('2', '1');
+
+INSERT INTO `provafacildb`.`disciplina` (`disNome`, `disAbreviacao`) VALUES ('Programação Orientada a Objetos', 'POO');
+INSERT INTO `provafacildb`.`disciplina` (`disNome`, `disAbreviacao`) VALUES ('Banco de Dados I', 'BDI');
+INSERT INTO `provafacildb`.`disciplina` (`disNome`, `disAbreviacao`) VALUES ('Desenvolvimento Web II', 'DW II');
+INSERT INTO `provafacildb`.`disciplina` (`disNome`, `disAbreviacao`) VALUES ('Desenvolvimento Móvel I', 'DM I');
+
+INSERT INTO `provafacildb`.`curso_disciplina` (`cud_curCodigo`, `cud_disCodigo`) VALUES ('1', '1');
+INSERT INTO `provafacildb`.`curso_disciplina` (`cud_curCodigo`, `cud_disCodigo`) VALUES ('1', '2');
+INSERT INTO `provafacildb`.`curso_disciplina` (`cud_curCodigo`, `cud_disCodigo`) VALUES ('3', '3');
+INSERT INTO `provafacildb`.`curso_disciplina` (`cud_curCodigo`, `cud_disCodigo`) VALUES ('1', '4');
+INSERT INTO `provafacildb`.`curso_disciplina` (`cud_curCodigo`, `cud_disCodigo`) VALUES ('1', '3');
+
+INSERT INTO `provafacildb`.`tema` (`temNome`, `tem_disCodigo`) VALUES ('Inserção no Banco de Dados', '2');
+INSERT INTO `provafacildb`.`tema` (`temNome`, `tem_disCodigo`) VALUES ('Polimorfismo', '1');
+INSERT INTO `provafacildb`.`tema` (`temNome`, `tem_disCodigo`) VALUES ('HTML', '3');
+INSERT INTO `provafacildb`.`tema` (`temNome`, `tem_disCodigo`) VALUES ('Android', '4');
+
+INSERT INTO `provafacildb`.`questao` (`queEnunciado`, `que_temCodigo`) VALUES ('Enunciado Questão POO Polimorfismo', '2');
+INSERT INTO `provafacildb`.`questao` (`queEnunciado`, `que_temCodigo`) VALUES ('Enunciado Inserção no BD', '1');
+INSERT INTO `provafacildb`.`questao` (`queEnunciado`, `que_temCodigo`) VALUES ('Enunciado de Web sobre HTML', '3');
+INSERT INTO `provafacildb`.`questao` (`queEnunciado`, `que_temCodigo`) VALUES ('Enunciado de Android', '4');
+
+INSERT INTO `provafacildb`.`alternativa` (`altCorreta`, `alt_queCodigo`, `altText`) VALUES ('1', '1', 'Alternativa 1 sobre Polimorfismo');
+INSERT INTO `provafacildb`.`alternativa` (`altCorreta`, `alt_queCodigo`, `altText`) VALUES ('0', '1', 'Alternativa 2 sobre Polimorfismo');
+INSERT INTO `provafacildb`.`alternativa` (`altCorreta`, `alt_queCodigo`, `altText`) VALUES ('0', '1', 'Alternativa 3 sobre Polimorfismo');
+INSERT INTO `provafacildb`.`alternativa` (`altCorreta`, `alt_queCodigo`, `altText`) VALUES ('0', '1', 'Alternativa 4 sobre Polimorfismo');
+INSERT INTO `provafacildb`.`alternativa` (`altCorreta`, `alt_queCodigo`, `altText`) VALUES ('0', '2', 'Alternativa 1 sobre BD');
+INSERT INTO `provafacildb`.`alternativa` (`altCorreta`, `alt_queCodigo`, `altText`) VALUES ('0', '2', 'Alternativa 2 sobre BD');
+INSERT INTO `provafacildb`.`alternativa` (`altCorreta`, `alt_queCodigo`, `altText`) VALUES ('1', '2', 'Alternativa 3 sobre BD');
+INSERT INTO `provafacildb`.`alternativa` (`altCorreta`, `alt_queCodigo`, `altText`) VALUES ('0', '2', 'Alternativa 4 sobre BD');
+INSERT INTO `provafacildb`.`alternativa` (`altCorreta`, `alt_queCodigo`, `altText`) VALUES ('0', '3', 'Alternativa 1 sobre HTML');
+INSERT INTO `provafacildb`.`alternativa` (`altCorreta`, `alt_queCodigo`, `altText`) VALUES ('1', '3', 'Alternativa 2 sobre HTML');
+INSERT INTO `provafacildb`.`alternativa` (`altCorreta`, `alt_queCodigo`, `altText`) VALUES ('0', '3', 'Alternativa 3 sobre HTML');
+INSERT INTO `provafacildb`.`alternativa` (`altCorreta`, `alt_queCodigo`, `altText`) VALUES ('0', '3', 'Alternativa 4 sobre HTML');
+INSERT INTO `provafacildb`.`alternativa` (`altCorreta`, `alt_queCodigo`, `altText`) VALUES ('0', '4', 'Alternativa 1 sobre Android');
+INSERT INTO `provafacildb`.`alternativa` (`altCorreta`, `alt_queCodigo`, `altText`) VALUES ('0', '4', 'Alternativa 2 sobre Android');
+INSERT INTO `provafacildb`.`alternativa` (`altCorreta`, `alt_queCodigo`, `altText`) VALUES ('0', '4', 'Alternativa 3 sobre Android');
+INSERT INTO `provafacildb`.`alternativa` (`altCorreta`, `alt_queCodigo`, `altText`) VALUES ('1', '4', 'Alternativa 4 sobre Android');
+

@@ -1,6 +1,6 @@
 <?php
 
-include "../pattern/database.php";
+require "../pattern/database.php";
 
 function DBDelete($table, $condicao) {
     $query = "DELETE FROM {$table} WHERE {$condicao};";
